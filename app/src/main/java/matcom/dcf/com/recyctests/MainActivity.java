@@ -2,15 +2,33 @@ package matcom.dcf.com.recyctests;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    ArrayList<TeamDetails> td = new ArrayList<TeamDetails>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //
+        TeamDetails team = new TeamDetails("Manchester","U.K.");
+        td.add(team);
+        team = new TeamDetails("Bayern Munich","Germany");
+        td.add(team);
+        team = new TeamDetails("P.S.G","France");
+        td.add(team);
+        //
+        RecyclerView rv = (RecyclerView) findViewById(R.id.recList);
+        rv.setAdapter(new MyRecAdapter(this,td));
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        //
+
     }
 
     @Override
