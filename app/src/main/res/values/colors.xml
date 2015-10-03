@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bkg_card">#FF6F00</color>
+
+    <color name="nb_selected_drag" >#ffe43137</color>
+    <color name="ylw" >#fffeb3</color>
+
+</resources>
