@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -51,14 +52,21 @@ public class MyRecAdapter extends RecyclerView.Adapter<MyRecAdapter.MyViewHolder
         return data.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView team;
         TextView country;
 
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            team = (TextView) itemView.findViewById(R.id.txtTeam);
-            country = (TextView) itemView.findViewById(R.id.txtCountry);
+        public MyViewHolder(View row) {
+            super(row);
+            team = (TextView) row.findViewById(R.id.txtTeam);
+            country = (TextView) row.findViewById(R.id.txtCountry);
+            row.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(v.getContext(),getAdapterPosition()+"   Item Selected",Toast.LENGTH_SHORT).show();
         }
     }
 }
