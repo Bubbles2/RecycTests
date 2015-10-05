@@ -4,5 +4,9 @@
 
     <color name="nb_selected_drag" >#ffe43137</color>
     <color name="ylw" >#fffeb3</color>
+    <color name="divider">#ff0000</color>
+    <color name="wht" >#ffffff</color>
+
+
 
 </resources>

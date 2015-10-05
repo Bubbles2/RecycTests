@@ -1,5 +1,6 @@
 package matcom.dcf.com.recyctests;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,7 +26,13 @@ public class MainActivity extends AppCompatActivity {
         td.add(team);
         //
         RecyclerView rv = (RecyclerView) findViewById(R.id.recList);
-        rv.setAdapter(new MyRecAdapter(this,td));
+        rv.setAdapter(new MyRecAdapter(this, td));
+        // Add decoration
+        Drawable divider=getResources().getDrawable(R.drawable.item_divider);
+        //
+        rv.addItemDecoration(new
+                Divider(divider));
+        //
         rv.setLayoutManager(new LinearLayoutManager(this));
         //
 
