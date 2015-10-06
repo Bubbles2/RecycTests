@@ -1,8 +1,11 @@
 package matcom.dcf.com.recyctests;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -61,6 +64,20 @@ public class MyRecAdapter extends RecyclerView.Adapter<MyRecAdapter.MyViewHolder
             team = (TextView) row.findViewById(R.id.txtTeam);
             country = (TextView) row.findViewById(R.id.txtCountry);
             row.setOnClickListener(this);
+            //
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                row.setOnTouchListener(new View.OnTouchListener() {
+                    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        v
+                                .findViewById(R.id.row)
+                                .getBackground()
+                                .setHotspot(event.getX(), event.getY());
+                        return(false);
+                    }
+                });
+            }
 
         }
 
