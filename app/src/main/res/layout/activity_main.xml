@@ -39,9 +39,29 @@
         android:layout_alignBottom="@+id/btnAdd"
         android:layout_alignParentEnd="true" />
 
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Time"
+        android:id="@+id/btnTime"
+        android:layout_below="@+id/btnAdd"
+        android:layout_alignParentStart="true"
+        android:onClick="showTime" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Result Time"
+        android:id="@+id/txtTime"
+        android:layout_alignBottom="@+id/btnTime"
+        android:layout_alignParentEnd="true" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recList"
-        android:layout_below="@+id/btnAdd"
+        android:layout_below="@+id/btnTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fa6932"
