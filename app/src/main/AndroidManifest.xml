@@ -16,7 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service android:name=".BoundService" />
+
+        <receiver android:name="MyReceiver">
+            <intent-filter>
+                <action android:name="com.matcom.MY_CUSTOM_INTENT">
+                </action>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
