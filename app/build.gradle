@@ -30,5 +30,7 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.3'
     //testCompile 'junit:junit:4.12'
     //androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    //
+    compile project(':core')
 
 }

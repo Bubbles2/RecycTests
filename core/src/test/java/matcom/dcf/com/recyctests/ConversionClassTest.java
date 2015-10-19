@@ -14,6 +14,9 @@ public class ConversionClassTest {
 
     @org.junit.Test
     public void testConvertValue() throws Exception {
+        //
+        double res = ConversionClass.convertValue(4);
+        assertEquals("Conversion Wrong",3,2);
 
     }
 }
